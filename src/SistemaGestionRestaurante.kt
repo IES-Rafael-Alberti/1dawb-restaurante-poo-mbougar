@@ -13,7 +13,9 @@ class SistemaGestionRestaurante(private val mesas: List<Mesa>) {
      */
     fun realizarPedido(numeroMesa: Int, pedido: Pedido) {
 
-        mesas[numeroMesa - 1].agregarPedido(pedido)
+        if (mesas[numeroMesa - 1].estado = EstadoMesa.OCUPADA.name.lowercase()) {
+            mesas[numeroMesa - 1].agregarPedido(pedido)
+        }
     }
 
     /**
