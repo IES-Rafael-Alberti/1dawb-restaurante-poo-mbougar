@@ -13,7 +13,11 @@ class SistemaGestionRestaurante(private val mesas: List<Mesa>) {
      */
     fun realizarPedido(numeroMesa: Int, pedido: Pedido) {
 
-        mesas[numeroMesa - 1].agregarPedido(pedido)
+        if (numeroPedido == null) {
+            mesas[numeroMesa - 1].cerrarPedido(mesas[numeroMesa - 1].pedidos.size - 1)
+        } else  {
+            mesas[numeroMesa - 1].cerrarPedido(numeroPedido)
+        }
     }
 
     /**
